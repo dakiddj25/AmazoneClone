@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Heading from "./Components/Heading";
 import Home from "./Components/Home";
 import Checkout from "./Components/Checkout";
+import Payment from "./Components/Payment";
 import Login from "./Components/Login";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { auth } from "./firebase";
@@ -35,6 +36,7 @@ function App() {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/checkout" component={Checkout} />
+          <Route path="/payment" component={Payment} />
           <Route path="/login" component={Login} />
         </Switch>
       </div>

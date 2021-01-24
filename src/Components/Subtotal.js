@@ -3,9 +3,11 @@ import  CurrencyFormat  from 'react-currency-format'
 import { useSelector, useDispatch } from "react-redux"
 import { basketCount } from './basketSlice'
 import './subtotal.css'
+import { useHistory } from 'react-router-dom';
 
 function Subtotal() {
     const  basket = useSelector(state => state.basket);
+    const history = useHistory();
 
     return (
         <div className ='subtotal'>
@@ -27,7 +29,7 @@ function Subtotal() {
             prefix={"$"}
             />
             
-            <button>Proceed to Checkout</button>
+            <button onClick={e => history.push('/payment')}>Proceed to Checkout</button>
         </div>
     )
 }
